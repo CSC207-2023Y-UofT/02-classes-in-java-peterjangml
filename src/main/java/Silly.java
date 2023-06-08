@@ -181,9 +181,11 @@ public class Silly implements Comparable<Silly>{
             return false;
         }
 
-        if (this.name != o.name) {
+        if (this.name != other.name) {
             return false;
         }
+
+        return true;
     }
 
     /**
