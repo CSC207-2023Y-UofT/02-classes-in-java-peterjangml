@@ -80,7 +80,15 @@ public class Silly implements Comparable<Silly>{
      *       Make sure you document this method!
      */
 
-
+    /**
+     * Creates a new Silly object.
+     * This constructor takes in two string parameters as argument and sets name of this Silly instance as
+     * the concatenation of the two strings.
+     *
+     * @param firstStr the first string
+     * @param secondStr the second string
+     */
+    public Silly(String firstStr, String secondStr) { this.name = firstStr + secondStr}
 
 
 
@@ -116,7 +124,7 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {};
+        int[] expected_values = {1, 2, 3, 4};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
@@ -134,6 +142,7 @@ public class Silly implements Comparable<Silly>{
     @Override
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
+        return this.name;
     }
 
     /**
@@ -161,6 +170,20 @@ public class Silly implements Comparable<Silly>{
 
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
+
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        if (this.name != o.name) {
+            return false;
+        }
     }
 
     /**
@@ -194,6 +217,15 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        int thisNameLen = this.name.length();
+        int otherNameLen = other.name.length();
+        if (thisNameLen > otherNameLen) {
+            return 1;
+        } else if (thisNameLen < otherNameLen) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     /*
