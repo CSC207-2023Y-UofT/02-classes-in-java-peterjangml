@@ -165,9 +165,9 @@ public class Silly implements Comparable<Silly>{
         if (!(o instanceof Silly)){
             return false;
         }
-        if (this == o) {
-            return true;
-        }
+//        if (this == o) {
+//            return true;
+//        }
         if (o == null) {
             return false;
         }
