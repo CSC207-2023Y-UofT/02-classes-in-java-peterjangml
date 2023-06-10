@@ -162,16 +162,13 @@ public class Silly implements Comparable<Silly>{
          *                We've started it by checking the type of o for you.
          *                You just need to return true if the names are equal.
          */
-        if (!(o instanceof Silly)){
+        if (!(o instanceof Silly)) {
             return false;
         }
-//        if (this == o) {
-//            return true;
-//        }
-        if (o == null) {
-            return false;
+        if (this == o) {
+            return true;
         }
-        if (this.getClass() != o.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
@@ -180,9 +177,10 @@ public class Silly implements Comparable<Silly>{
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
 
-        if (this.name == other.name) {
-            return true;
+        if (!this.name.equals(other.name)) {
+            return false;
         }
+        return true;
     }
 
     /**
