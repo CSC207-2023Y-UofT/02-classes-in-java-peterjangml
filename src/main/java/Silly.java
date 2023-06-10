@@ -180,10 +180,9 @@ public class Silly implements Comparable<Silly>{
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
 
-        if (this.name != other.name) {
-            return false;
+        if (this.name == other.name) {
+            return true;
         }
-        return true;
     }
 
     /**
